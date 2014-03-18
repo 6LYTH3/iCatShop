@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public interface ProductService {
 	public ArrayList<String> getOrderByName(String name);
 
+	public ArrayList<String> showProduct();
+
 	public void addCart(String username, String product, double price,
 			int items, String status);
 

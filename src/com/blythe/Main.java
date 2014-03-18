@@ -1,39 +1,45 @@
 package com.blythe;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
+	static Scanner input = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		// Product p = new Product("n1", 10);
-		// p.save();
-		//
-		// Product product = new Product();
-		// System.out.println(product.getPriceByName("name2"));
-		//
-		// Order order = new Order("Naruedol", "n1", 2);
-		// // order.insertOrder();
-		//
-		// System.out.println(order.getOrder("Naruedol"));
-		//
-		// String nn = order.getOrder("Naruedol").get(0);
-		// String[] upOrder = nn.split(":");
-		//
-		// order.updateOrder(upOrder[0], upOrder[1], Double.valueOf(upOrder[2]),
-		// Integer.valueOf(upOrder[3]));
-		//
-		// p.update("n1", 13.00);
+		int mode = -1;
+		do {
+			mode = getMode();
+			switch (mode) {
+			case 0:
+				break;
+			case 1:
+				Product product = new Product();
+				ArrayList<String> productList = product.show();
+				for (String pl : productList) {
+					String[] p = pl.split(":");
+					System.out.println(p[0] + " | " + p[1]);
+				}
+			case 2:
+				break;
+			case 3:
+				break;
+			default:
+			}
+		} while (mode == 0);
+		System.out.println("Good Bye");
+	}
 
-		Register register = new Register();
-		if (register.addUser("Naruedol", "1234", "Employee")) {
-			System.out.println("Success");
-		}
+	private static int getMode() {
+		System.out.println("------------Menu----------");
+		System.out.println("1. Show Product");
+		System.out.println("2. Add Cart");
+		System.out.println("3. Update Cart");
+		System.out.println("0. Exit");
+		System.out.print("Select: ");
+		int in = input.nextInt();
 
-		Authentication authentication = new Authentication();
-		if (authentication.validate("Naruedol", "1234")) {
-			System.out.println("Hello world");
-			System.out.println(authentication.getPermisstion("Naruedol"));
-		} else {
-			System.out.println("invalid password");
-		}
+		return in;
 	}
 
 }

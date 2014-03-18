@@ -191,4 +191,21 @@ public class ProductImp implements ProductService {
 		System.out.println("Delect");
 	}
 
+	@Override
+	public ArrayList<String> showProduct() {
+		String buff;
+		ArrayList<String> order = new ArrayList<String>();
+		try {
+			fr = new FileReader("product.txt");
+			br = new BufferedReader(fr);
+			while ((buff = br.readLine()) != null) {
+				order.add(buff);
+			}
+			br.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return (order.isEmpty()) ? null : order;
+	}
+
 }

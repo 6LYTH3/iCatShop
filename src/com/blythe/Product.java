@@ -1,5 +1,7 @@
 package com.blythe;
 
+import java.util.ArrayList;
+
 public class Product {
 
 	private String name;
@@ -46,6 +48,10 @@ public class Product {
 
 	public void delete(String name) {
 		productService.delectProudct(name);
+	}
+
+	public ArrayList<String> show() {
+		return productService.showProduct();
 	}
 
 }
