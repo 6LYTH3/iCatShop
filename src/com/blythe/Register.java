@@ -2,15 +2,11 @@ package com.blythe;
 
 public class Register extends User {
 
-	public Boolean isUser(String name) {
-		return getName().equalsIgnoreCase(name);
-	}
-
-	public boolean addUser(String name, String password) {
+	public boolean addUser(String name, String password, String role) {
 		if (isUser(name))
 			return false;
 
-		setName(name);
+		userService.createAccount(name, password, role);
 		return true;
 	}
 

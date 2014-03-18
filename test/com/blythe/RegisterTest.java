@@ -21,12 +21,12 @@ public class RegisterTest {
 
 	@Test
 	public void testAddUsernameDuplicateShouldFail() {
-		assertFalse(register.addUser("username", null));
+		assertFalse(register.addUser("username", null, null));
 	}
 
 	@Test
 	public void testAddUsername() {
-		assertTrue(register.addUser("name", null));
+		assertTrue(register.addUser("name", null, null));
 		assertEquals("name", register.getName());
 	}
 }

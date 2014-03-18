@@ -7,6 +7,7 @@ public class Product {
 	private ProductService productService = new ProductImp();
 
 	public Product() {
+		// Default Constructor
 	}
 
 	public Product(String name, double price) {

@@ -20,9 +20,4 @@ public class UserTest {
 		assertEquals("user", user.getName());
 	}
 
-	@Test
-	public void testValidatePassword() {
-		assertEquals("password", user.getPasswordByName("name"));
-	}
-
 }
