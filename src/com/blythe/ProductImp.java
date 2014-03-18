@@ -134,12 +134,61 @@ public class ProductImp implements ProductService {
 
 	@Override
 	public void updateProduct(String name, double price) {
+		String buff;
+		ArrayList<String> backup = new ArrayList<String>();
+		try {
+			fr = new FileReader("product.txt");
+			br = new BufferedReader(fr);
+			while ((buff = br.readLine()) != null) {
+				String[] order = buff.split(":");
+				if (!(order[0].equals(name))) {
+					backup.add(buff);
+				}
+			}
+			br.close();
 
+			File file = new File("product.txt");
+			file.delete();
+
+			fw = new FileWriter("product.txt", true);
+			for (String data : backup) {
+				fw.write(data + newline);
+			}
+			fw.write(name + ":" + price + newline);
+			fw.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("Updated");
 	}
 
 	@Override
 	public void delectProudct(String name) {
+		String buff;
+		ArrayList<String> backup = new ArrayList<String>();
+		try {
+			fr = new FileReader("product.txt");
+			br = new BufferedReader(fr);
+			while ((buff = br.readLine()) != null) {
+				String[] order = buff.split(":");
+				if (!(order[0].equals(name))) {
+					backup.add(buff);
+				}
+			}
+			br.close();
 
+			File file = new File("product.txt");
+			file.delete();
+
+			fw = new FileWriter("product.txt", true);
+			for (String data : backup) {
+				fw.write(data + newline);
+			}
+			fw.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("Delect");
 	}
 
 }

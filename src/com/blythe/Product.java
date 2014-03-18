@@ -39,4 +39,12 @@ public class Product {
 			productService.addProduct(name, price);
 	}
 
+	public void update(String name, double price) {
+		productService.updateProduct(name, price);
+	}
+
+	public void delete(String name) {
+		productService.delectProudct(name);
+	}
+
 }

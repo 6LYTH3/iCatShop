@@ -10,7 +10,7 @@ public class Main {
 		System.out.println(product.getPriceByName("name2"));
 
 		Order order = new Order("Naruedol", "n1", 2);
-		//order.insertOrder();
+		// order.insertOrder();
 
 		System.out.println(order.getOrder("Naruedol"));
 
@@ -20,6 +20,7 @@ public class Main {
 		order.updateOrder(upOrder[0], upOrder[1], Double.valueOf(upOrder[2]),
 				Integer.valueOf(upOrder[3]));
 
+		p.update("n1", 13.00);
 	}
 
 }
