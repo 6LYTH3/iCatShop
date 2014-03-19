@@ -8,6 +8,10 @@ public class Order extends Product {
 	private int items;
 	private ProductService productService = new ProductImp();
 
+	public Order() {
+		// Default Constructor
+	}
+
 	public Order(String username, String productName, int items) {
 		this.username = username;
 		this.productName = productName;
